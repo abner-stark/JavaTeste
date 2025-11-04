@@ -1,35 +1,37 @@
-package mEuP1;
-import java.util.Scanner;//declaração do scanner
-public class teste {
+import java.util.Scanner;//Declarar o scanner
+public class Teste {
     public static void main(String[] args){
 
-        //instanciando o objeto
-        Roteador rt1 = new Roteador("Tp-link", "Anvox3" ,168192367,"tim");
-        Roteador rt2 = new Roteador("Tp-shock", "Anvox4" ,168192368,"claro");
+        //Instanciamento do roteador
+        Roteador rt1 = new Roteador("Tp-link", "Anvox3" ,168192361);
+        Roteador rt2 = new Roteador("Tp-shock", "Anvox4" ,168192362);
 
-        //instaciar o scanner
+        //Instanciamento do scanner
         Scanner sc = new Scanner(System.in);
 
-    //escolha de qual roteador vai ligar de acordo com o que escolher
+        //Ligar o roteador informado, garantindo que o outro esteja desliagdo.
 
         System.out.println("Qual roteador deseja ligar? " + "\n" +
-                "aperte 1 para selecionar o 1 e 2 para selecionar o 2 ....");
+                "aperte 1 para escolher o 1 e 2 para escolher o 2 ....");
         int receber = sc.nextInt();
 
         if(receber == 1){
             rt1.ligar();
             rt2.desligar();
-            System.out.println("O roteador 1 foi ligado com sucesso!!!!!!!!!!");
+            System.out.println("Ligado o Roteador 1!" +
+                    "Roteador 2 desligado!");
         }
         else{
-          rt1.desligar();
-          rt2.ligar();
-            System.out.println("O roteador 2 foi ligado com sucesso!!!!!!!!!!!!!!!!!!");
+            rt1.desligar();
+            rt2.ligar();
+            System.out.println("ligado Roteador 2!" +
+                    "Roteador 1 Desligado!");
         }
 
-        //retorno das informações
-        System.out.println(rt1.toString());
-        System.out.println(rt2.toString());
-
+        //Retorna o Endereço Ip e Status
+        System.out.println("Roteador1: "+ rt1.getEnderecoIP());
+        System.out.println("Roteador1: "+ rt1.isStatus());
+        System.out.println("Roteador2: "+ rt2.getEnderecoIP());
+        System.out.println("Roteador2: "+ rt2.isStatus());
     }
 }
