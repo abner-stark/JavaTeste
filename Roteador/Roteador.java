@@ -1,20 +1,17 @@
-package mEuP1;
-
 public class Roteador {
     private String marca;
     private String modelo;
     private int enderecoIP;
     private boolean status;
-    private String redeWiFi;
 
     //Método construtor
 
-    public Roteador(String marca, String modelo, int enderecoIP, String redeWiFi) {
+    public Roteador(String marca, String modelo, int enderecoIP) {
         this.marca = marca;
         this.modelo = modelo;
         this.enderecoIP = enderecoIP;
         this.status = false; // inicia desligado
-        this.redeWiFi = redeWiFi;
+
     }
 
     //Getters e Setters
@@ -66,11 +63,6 @@ public class Roteador {
         }
     }
 
-    // Atualizar rede vinculada ao roteador
-    public String atualizarRede(String novaRede) {
-        this.redeWiFi = novaRede;
-        return "Rede Wi-Fi atualizada para: " + novaRede;
-    }
 
     @Override
     public String toString() {
@@ -79,8 +71,6 @@ public class Roteador {
                 ", modelo='" + modelo + "\n" +
                 ", enderecoIP='" + enderecoIP + "\n" +
                 ", status=" + status + "\n" +
-                ", redeWiFi='" + redeWiFi + "\n" +
                 '}';
     }
 }
-
